@@ -1,6 +1,7 @@
 package com.murilo.roomrent.adapters.api;
 
 import com.murilo.roomrent.application.SampleApplication;
+import com.murilo.roomrent.application.SampleFilter;
 import com.murilo.roomrent.application.SampleResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,7 @@ public class SampleController {
 
     @GetMapping("{foo}")
     SampleResponse get(@PathVariable("foo") String foo) {
-        return service.execute(foo);
+        SampleFilter sampleFilter = new SampleFilter().withName(foo);
+        return service.execute(sampleFilter);
     }
-
 }

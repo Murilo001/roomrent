@@ -11,13 +11,12 @@ public class SampleApplication {
 
     private final SampleRepository sampleRepository;
 
-
     public SampleApplication(SampleRepository sampleRepository) {
         this.sampleRepository = sampleRepository;
     }
 
-    public SampleResponse execute(String foo) {
-        Optional<Sample> sampleOptional = sampleRepository.get(foo);
+    public SampleResponse execute(SampleFilter filter) {
+        Optional<Sample> sampleOptional = sampleRepository.get(filter.getName());
         return sampleOptional.map(SampleResponse::of).orElse(null);
     }
 }

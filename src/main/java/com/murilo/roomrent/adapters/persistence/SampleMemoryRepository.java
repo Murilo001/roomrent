@@ -2,18 +2,18 @@ package com.murilo.roomrent.adapters.persistence;
 
 import com.murilo.roomrent.domain.model.Sample;
 import com.murilo.roomrent.domain.repository.SampleRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class SampleMemoryRepository implements SampleRepository {
 
-    private List<Sample> samples = new ArrayList<>();
+    private List<Sample> samples = Arrays.asList(new Sample("foo"), new Sample("barr"), new Sample("baz"));
 
-    public void setSamples(List<Sample> samples) {
-        this.samples = samples;
-    }
 
     public List<Sample> getSamples() {
         return samples;

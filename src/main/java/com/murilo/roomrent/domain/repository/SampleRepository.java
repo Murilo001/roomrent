@@ -1,10 +1,7 @@
 package com.murilo.roomrent.domain.repository;
 
 import com.murilo.roomrent.domain.model.Sample;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
-
-public interface SampleRepository {
-
-    Optional<Sample> get(String foo);
+public interface SampleRepository extends JpaRepository<Sample, Long> {
 }

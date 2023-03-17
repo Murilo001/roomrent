@@ -1,7 +1,12 @@
 package com.murilo.roomrent.domain.model;
 
-public class Sample {
+import javax.persistence.*;
 
+@Entity
+public class Sample {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
 
     public Sample(String name) {

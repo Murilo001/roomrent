@@ -15,8 +15,15 @@ public class SampleApplication {
         this.sampleRepository = sampleRepository;
     }
 
-    public SampleResponse execute(SampleFilter filter) {
-        Optional<Sample> sampleOptional = sampleRepository.get(filter.getName());
-        return sampleOptional.map(SampleResponse::of).orElse(null);
+    public SampleDTO execute(SampleFilter filter) {
+        Optional<Sample> sampleOptional = sampleRepository.findById(filter.getId());
+        return sampleOptional.map(this::createDTO).orElse(null);
+    }
+
+    private SampleDTO createDTO(Sample sample) {
+        SampleDTO sampleDTO = new SampleDTO();
+        sampleDTO.id = sample.getId();
+        sampleDTO.name = sample.getName();
+        return sampleDTO;
     }
 }

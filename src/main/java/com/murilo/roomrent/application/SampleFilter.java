@@ -1,14 +1,16 @@
 package com.murilo.roomrent.application;
 
-public class SampleFilter {
-    private String name;
+import java.util.UUID;
 
-    public SampleFilter withName(String name) {
-        this.name = name;
+public class SampleFilter {
+    private String id;
+
+    public SampleFilter withId(String id) {
+        this.id = id;
         return this;
     }
 
-    public String getName() {
-        return name;
+    public UUID getId() {
+        return UUID.fromString(id);
     }
 }

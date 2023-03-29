@@ -2,7 +2,7 @@ package com.murilo.roomrent.adapters.api;
 
 import com.murilo.roomrent.application.SampleApplication;
 import com.murilo.roomrent.application.SampleFilter;
-import com.murilo.roomrent.application.SampleResponse;
+import com.murilo.roomrent.application.SampleDTO;
 import com.murilo.roomrent.application.SampleResponseHATEOAS;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
@@ -23,8 +23,8 @@ public class SampleController {
     }
 
     @GetMapping("{foo}")
-    SampleResponse get(@PathVariable("foo") String foo) {
-        SampleFilter sampleFilter = new SampleFilter().withName(foo);
+    SampleDTO get(@PathVariable("foo") String foo) {
+        SampleFilter sampleFilter = new SampleFilter().withId(foo);
         return service.execute(sampleFilter);
     }
 

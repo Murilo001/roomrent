@@ -1,12 +1,12 @@
 package com.murilo.roomrent.domain.model;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 import java.util.UUID;
 
 @Embeddable
 public class UniqueId {
-    @Column(name = "id", updatable = false, unique = true, nullable = false)
+    @Column(name = "unique_id", updatable = false, unique = true, nullable = false)
     private UUID id;
 
     public UniqueId() {

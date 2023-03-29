@@ -49,7 +49,7 @@ public class SampleApplicationTest {
 
     private SampleDTO createSampleDtoFromSample(Sample sample) {
         SampleDTO sampleDTO = new SampleDTO();
-        sampleDTO.id = sample.getId();
+        sampleDTO.id = sample.getUniqueId();
         sampleDTO.name = sample.getName();
         return sampleDTO;
     }

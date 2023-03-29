@@ -22,7 +22,7 @@ public class SampleApplication {
 
     private SampleDTO createDTO(Sample sample) {
         SampleDTO sampleDTO = new SampleDTO();
-        sampleDTO.id = sample.getId();
+        sampleDTO.id = sample.getUniqueId();
         sampleDTO.name = sample.getName();
         return sampleDTO;
     }

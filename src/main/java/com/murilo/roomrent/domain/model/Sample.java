@@ -1,18 +1,22 @@
 package com.murilo.roomrent.domain.model;
 
-import org.springframework.cglib.core.TypeUtils;
-
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
 public class Sample {
-    private UniqueId id;
+
+    @Id
+    @GeneratedValue
+    private Long id;
+    private UniqueId uniqueId;
     private String name;
 
-    public Sample(UniqueId id, String name) {
-        verifyRequiredFields(id, name);
-        this.id = id;
+    public Sample(UniqueId uniqueId, String name) {
+        verifyRequiredFields(uniqueId, name);
+        this.uniqueId = uniqueId;
         this.name = name;
     }
 
@@ -25,7 +29,7 @@ public class Sample {
         }
     }
 
-    public String getId() { return id.toString(); }
+    public String getUniqueId() { return uniqueId.toString(); }
     public String getName() {
         return name;
     }

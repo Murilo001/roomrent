@@ -24,7 +24,7 @@ public class SampleTest {
         UniqueId uniqueId = new UniqueId();
         Sample sample = new Sample(uniqueId,"name");
 
-        String resultId = sample.getId();
+        String resultId = sample.getUniqueId();
 
         Assertions.assertThat(resultId).isNotNull();
     }
